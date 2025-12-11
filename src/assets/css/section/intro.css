@@ -1,0 +1,68 @@
+/* ----------------------------------------------------
+   INTRO SECTION
+---------------------------------------------------- */
+
+.intro {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.intro__inner {
+    width: 100%;
+    height: 100%;
+}
+
+.intro__inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* ----------------------------------------------------
+   RIGHT SIDE NAV (01 | 06)
+---------------------------------------------------- */
+
+.side__nav {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    z-index: 100;
+}
+
+.side__nav .current {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.side__nav .total {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+/* ---------- Progress Line ---------- */
+.side__nav .line {
+    width: 2px;
+    height: 80px;      /* 원하는 길이로 조절 */
+    background: rgba(0,0,0,0.15);
+    margin: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.side__nav .line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--progress, 0%);
+    background: #000;
+    transition: height 0.3s ease-out;
+}

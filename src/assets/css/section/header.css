@@ -5,6 +5,7 @@
     width: 100%;
     z-index: 10000;
 }
+
 .header__inner {
     display: flex;
     align-items: center;
@@ -13,26 +14,61 @@
     backdrop-filter: blur(15px);
     padding: 1rem;
 }
+
+/* ------------------------
+   로고 영역
+------------------------- */
 .header__logo {
-    font-size: 0.9rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;   /* h1 위, em 아래 */
+    align-items: center;      /* 전체 가운데 정렬 */
     text-transform: uppercase;
     line-height: 1;
 }
+
+/* 큰 제목(h1) */
+.header__logo h1 {
+    margin: 0;
+}
+
+/* h1 안에서 이미지 + 글자를 가로 정렬 */
+.header__logo h1 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;                /* 로고와 텍스트 간격 */
+    text-decoration: none;
+}
+
+/* 로고 이미지 크기 */
+.header__logo h1 a img {
+    width: 50px;
+    display: block;
+}
+
+/* 작은 글씨(CAFE)는 자동으로 줄바꿈 + 가운데 */
 .header__logo em {
     font-size: 10px;
-    display: block;
+    display: block;           /* 줄바꿈 */
+    margin-top: 4px;
     color: var(--black200);
 }
+
+/* ------------------------
+   네비게이션
+------------------------- */
+
 .header__nav li {
     display: inline;
 }
+
 .header__nav li a {
     text-transform: uppercase;
     font-size: 14px;
     padding: 14px;
     position: relative;
 }
+
 .header__nav li a::before {
     content: '';
     width: calc(100% - 28px);
@@ -44,15 +80,19 @@
     transform: scaleX(0);
     transition: all 0.3s;
 }
+
 .header__nav li a:hover::before {
     transform: scaleX(1);
 }
+
+/* 모바일 메뉴 */
 .header__nav__mobile {
     display: none;
     width: 40px;
     height: 40px;
     cursor: pointer;
 }
+
 .header__nav__mobile span {
     display: block;
     width: 40px;
@@ -61,6 +101,7 @@
     margin-top: 19px;
     position: relative;
 }
+
 .header__nav__mobile span::before {
     content: "";
     width: 40px;
@@ -71,6 +112,7 @@
     top: 6px;
     transition: width 0.3s;
 }
+
 .header__nav__mobile span::after {
     content: "";
     width: 40px;
