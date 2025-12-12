@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="한가지 사이트를 다양한 프레임워크를 통해 만들어 보는 포트폴리오 사이트입니다."/>
-    <meta name="keyword" content="포트폴리오, 리액트, 뷰, 넥스트, 웹스토리보이, portfolio, react.js, vue.js, next.js, webstoryboy" />
+    <meta name="description" content="한가지 사이트를 다양한 프레임워크를 통해 만들어 보는 포트폴리오 사이트입니다.">
+    <meta name="keyword" content="포트폴리오, 리액트, 뷰, 넥스트, 웹스토리보이, portfolio, react.js, vue.js, next.js, webstoryboy">
     <title>cozy-dessert-design Vite-Site</title>
 
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
-    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <script type="module" src="assets/js/main.js"></script>
+
+    <!-- skip -->
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
         <a href="#intro">소개 영역 바로가기</a>
@@ -23,17 +24,19 @@
     </div>
     <!-- //skip -->
 
+    <!-- header -->
     <header id="header" role="banner">
         <div class="header__inner">
-                <div class="header__logo">
-                    <h1>
-                        <a href="#">
-                            <img src="assets/img/logo3.svg" alt="">
-                            Cozy-Dessert
-                        </a>
-                    </h1>
-                    <em>CAFE</em>
-                </div>
+            <div class="header__logo">
+                <h1>
+                    <a href="#">
+                        <img src="assets/img/logo3.svg" alt="">
+                        Cozy-Dessert
+                    </a>
+                </h1>
+                <em>CAFE</em>
+            </div>
+
             <nav class="header__nav" role="navigation" aria-label="메인 메뉴">
                 <ul>
                     <li><a href="#intro">intro</a></li>
@@ -43,11 +46,12 @@
                     <li><a href="#contact">contact</a></li>
                 </ul>
             </nav>
+
             <div 
-                class="header__nav__mobile" 
-                id="headerToggle" 
-                aria-controls="primary-menu" 
-                aria-expanded="false" 
+                class="header__nav__mobile"
+                id="headerToggle"
+                aria-controls="primary-menu"
+                aria-expanded="false"
                 role="button"
                 tabindex="0"
             >
@@ -56,86 +60,63 @@
         </div>
     </header>
     <!-- //header -->
+
     
     <main id="main" role="main">
+
+        <!-- intro -->
         <section id="intro" class="intro">
             <div class="intro__inner">
                 <img src="https://mcdn.twosome.co.kr/upload/MODS0030/202106/MODS0030_20210617220418_hViWHnLB" alt="cozy dessert image">
             </div>
 
-            <div class="side__nav">
-                <span class="current">01</span>
-                <div class="line"></div>
-                <span class="total">06</span>
-            </div>
+            <!-- Side Nav 01 -->
         </section>
 
-        <section class="menuStory">
-            <div class="menuStory__inner">
-                
-                <!-- Left Text -->
-                <div class="menuStory__text">
-                <h2 class="title">MENU STORY<span class="dot">.</span></h2>
 
-                <ul class="category">
-                    <li class="active">
-                        <p class="desc">전문가의 섬세함으로 완성한 최상의 커피</p>
-                        COFFEE STORY
-                    </li>
-                    <li>DESSERT STORY</li>
-                    <li>DELI STORY</li>
-                </ul>
-                </div>
-                <div class="menuStory-list">
-                    <!-- Center Main Image (UL 구조로 변경) -->
-                    <ul class="menuStory__mainImg">
-                        <li>
-                            <a href="#">
-                                <img src="assets/img/coffee1.jpg" alt="menu main" />
-                            </a>
-                            <div class="mainImg__caption">
-                                <button class="prevBtn">←</button>
-                                <span>아이스 아메리카노</span>
-                                <button class="nextBtn">→</button>
-                            </div>
-                        </li>
-                    </ul>
+        <!-- menuStory -->
+<!-- MENU STORY SECTION -->
+<section class="menuStory">
+    <div class="menuStory__inner">
 
-                    <!-- Right Thumbnail Slider (UL 구조) -->
-                    <ul class="menuStory__thumbs">
-                        <li>
-                            <a href="#"><img src="assets/img/coffee2.jpg" alt="thumb1" /></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="https://source.unsplash.com/200x200/?latte" alt="thumb2" /></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="https://source.unsplash.com/200x200/?espresso" alt="thumb3" /></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="https://source.unsplash.com/200x200/?juice" alt="thumb4" /></a>
-                        </li>
-                        <li>
-                            <a href="#"><img src="https://source.unsplash.com/200x200/?tea" alt="thumb5" /></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Right Side Number Navigation -->
-                <div class="sideNav">
-                <span class="top">02</span>
-                <div class="line"><span></span></div>
-                <span class="bottom">06</span>
-                </div>
-            </div>
-        </section>
+        <!-- LEFT TEXT -->
+        <div class="menuStory__text">
+            <h2 class="title">MENU<br>STORY<span class="dot">.</span></h2>
 
-    </main> 
-    <!-- //main -->
+            <ul class="category">
+                <li class="active" data-category="coffee">
+                    <p class="sub">전문가의 섬세함으로 완성한 최상의 커피</p>
+                    COFFEE STORY
+                </li>
+                <li data-category="dessert">
+                    <p class="sub">달콤함을 채워주는 프리미엄 디저트</p>
+                    DESSERT STORY
+                </li>
+                <li data-category="deli">
+                    <p class="sub">든든한 식사와 부담 없는 맛</p>
+                    DELI STORY
+                </li>
+            </ul>
+        </div>
 
-    <footer id="footer" role="contentinfo">
-    </footer>
-    <!-- //footer -->
+        <!-- 여기에 JS가 menuStory__main + thumbs 자동 생성 -->
+        <div class="menuStory__container"></div>
+
+    </div>
+</section>
+
+    </main>
+
+    <footer id="footer" role="contentinfo"></footer>
+
+    <div class="side_nav">
+        <span class="current">01</span>
+        <div class="line"><span></span></div>
+        <span class="total">06</span>
+    </div>
 
     <script type="module" src="assets/js/main.js"></script>
+
+
 </body>
 </html>

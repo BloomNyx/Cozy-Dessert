@@ -1,161 +1,92 @@
-/* 기본 리셋 */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 .menuStory {
-  width: 100%;
-  height: 100%;
-  padding: 150px 0;
-}
-.menuStory__inner {
-  width: 90%;
-  max-width: 1600px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr auto;
-  gap: 50px;
-  position: relative;
-}
-/* ---------------- Left Text ---------------- */
-.menuStory__text .title {
-  font-size: 80px;
-  font-weight: 900;
-  line-height: 1;
-}
-.menuStory__text .dot {
-  color: #e4002b; /* 투썸 포인트 레드 */
-}
-.menuStory__text .desc {
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: 500;
-}
-.menuStory__text .category {
-  list-style: none;
-  margin-top: 40px;
-  font-size: 28px;
-  line-height: 1.8;
-}
-.menuStory__text .category li {
-  color: #999;
-  font-weight: 700;
-  cursor: pointer;
-}
-.menuStory__text .category li.active {
-  color: #000;
-  border-bottom: 2px solid #000;
-}
-/* ---------------- Center Main Image ---------------- */
-/* ---------------- Center Main Image ---------------- */
-
-.menuStory__mainImg {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menuStory__mainImg li a {
-    display: block;
-}
-
-.menuStory__mainImg img {
     width: 100%;
+    height: 100vh;
+    background: #f2eae6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuStory__inner {
+    width: 90%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 0.6fr 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* LEFT TEXT */
+.menuStory__text .title {
+    font-size: 90px;
+    font-weight: 900;
+    line-height: 1;
+}
+.menuStory__text .dot { color: #d32f2f; }
+
+.menuStory__text .sub {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #5d5d5d;
+}
+
+.category {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+.category li {
+    margin-bottom: 15px;
+    color: #b5b5b5;
+    cursor: pointer;
+}
+.category li.active {
+    color: #000;
+    border-bottom: 2px solid #000;
+    width: fit-content;
+}
+
+/* MAIN IMAGE */
+.menuStory__main {
+    text-align: center;
+}
+.menuStory__main .mainImg img {
+    width: 420px;
+    height: 520px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
 .mainImg__caption {
-    margin-top: 10px;
-    background: #000;
-    color: #fff;
-    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #000;
+    color: #fff;
+    padding: 18px 25px;
+    width: 420px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 8px;
 }
-
 .mainImg__caption button {
     background: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
 }
 
-/* ---------------- Right Thumbnail Slider ---------------- */
-.menuStory-list {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 40px;  /* 메인 이미지와 썸네일 간격 */
-    position: relative;
-}
-
-/* 메인 이미지 영역 */
-.menuStory__mainImg {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 500px;          /* 메인이미지 크기에 맞게 조절 */
-}
-
-.menuStory__mainImg li {
-    position: relative;
-}
-
-/* 썸네일 리스트를 오른쪽 세로 정렬 */
+/* THUMBNAILS */
 .menuStory__thumbs {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: row; /* 세로 정렬 */
-    gap: 15px;
+    flex-direction: row;
+    gap: 14px;
 }
-
-.menuStory__thumbs li a img {
-    width: 80px;
-    height: 80px;
+.menuStory__thumbs li img {
+    width: 90px;
+    height: 90px;
     object-fit: cover;
-    display: block;
     border-radius: 6px;
     cursor: pointer;
-}
-
-/* prev/next 버튼 정렬 유지 */
-.mainImg__caption {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 12px;
-    background: #000;
-    color: #fff;
-    margin-top: 10px;
-}
-
-
-/* ---------------- Side Number Nav ---------------- */
-.sideNav {
-  position: absolute;
-  right: -50px;
-  top: 40%;
-  transform: translateY(-50%);
-  text-align: center;
-  font-weight: 600;
-}
-.sideNav .line {
-  width: 2px;
-  height: 120px;
-  background: #d9d9d9;
-  margin: 10px auto;
-  position: relative;
-}
-.sideNav .line span {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 30%; /* 나중에 GSAP로 채워줄 부분 */
-  background: #000;
 }
