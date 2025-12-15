@@ -1,3 +1,6 @@
+/* ===============================
+   MENU STORY BASE
+================================ */
 .menuStory {
     width: 100%;
     height: 100vh;
@@ -11,21 +14,26 @@
     width: 90%;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.2fr 0.6fr 60px;
+    grid-template-columns: 1fr 1.2fr 0.6fr 60px; /* ✅ 유지 */
     align-items: center;
     position: relative;
 }
 
-/* LEFT TEXT */
+/* ===============================
+   LEFT TEXT
+================================ */
 .menuStory__text .title {
     font-size: 90px;
     font-weight: 900;
     line-height: 1;
 }
-.menuStory__text .dot { color: #d32f2f; }
+
+.menuStory__text .dot {
+    color: #d32f2f;
+}
 
 .menuStory__text .sub {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 15px;
     color: #5d5d5d;
 }
@@ -35,21 +43,37 @@
     font-size: 28px;
     font-weight: 700;
 }
+
 .category li {
     margin-bottom: 15px;
     color: #b5b5b5;
     cursor: pointer;
 }
+
 .category li.active {
     color: #000;
     border-bottom: 2px solid #000;
     width: fit-content;
 }
 
-/* MAIN IMAGE */
+/* ===============================
+   MAIN + THUMBS WRAP
+================================ */
+.menuStory__container {
+    grid-column: 2 / 4; /* ⭐ main + thumbs를 하나로 묶음 */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ===============================
+   MAIN IMAGE
+================================ */
 .menuStory__main {
+    flex-shrink: 0;
     text-align: center;
 }
+
 .menuStory__main .mainImg img {
     width: 420px;
     height: 520px;
@@ -57,6 +81,7 @@
     border-radius: 8px;
 }
 
+/* CAPTION */
 .mainImg__caption {
     display: flex;
     justify-content: space-between;
@@ -65,10 +90,10 @@
     color: #fff;
     padding: 18px 25px;
     width: 420px;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 10px auto 0;
     border-radius: 8px;
 }
+
 .mainImg__caption button {
     background: none;
     border: none;
@@ -77,16 +102,159 @@
     cursor: pointer;
 }
 
-/* THUMBNAILS */
+/* ===============================
+   THUMBNAILS (PC)
+================================ */
 .menuStory__thumbs {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* ⭐ PC는 세로 */
     gap: 14px;
 }
+
 .menuStory__thumbs li img {
     width: 90px;
     height: 90px;
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s, transform 0.3s;
 }
+
+.menuStory__thumbs li img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* ===============================
+   SIDE NAV 공간 확보 (4번째 컬럼)
+================================ */
+.menuStory__inner::after {
+    content: "";
+    grid-column: 4;
+}
+
+/* ===============================
+   TABLET
+================================ */
+@media (max-width: 1024px) {
+
+    /* main + thumbs를 세로로 */
+    .menuStory__container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* 메인 이미지 */
+    .menuStory__main {
+        order: 1;
+    }
+
+    /* 썸네일을 메인 "아래"로 */
+    .menuStory__thumbs {
+        order: 2;
+        flex-direction: row;      /* 가로 */
+        justify-content: center;
+        gap: 12px;
+        margin-top: 10px;
+    }
+}
+
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 768px) {
+
+    /* 전체 섹션 */
+    .menuStory {
+        height: auto;
+        padding: 60px 0 80px;
+    }
+
+    /* grid 유지하되 1컬럼처럼 사용 */
+    .menuStory__inner {
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    /* 텍스트 */
+    .menuStory__text {
+        text-align: left;
+    }
+
+    .menuStory__text .title {
+        font-size: 56px;
+        line-height: 1.05;
+    }
+
+    .category {
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+    .category li {
+        margin-bottom: 12px;
+    }
+
+    .category li.active {
+        border-bottom-width: 1px;
+    }
+
+    /* 메인 + 썸네일 묶음 */
+    .menuStory__container {
+        grid-column: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+
+    /* 메인 이미지 */
+    .menuStory__main .mainImg img {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    /* 캡션 */
+    .mainImg__caption {
+        width: 100%;
+        max-width: 360px;
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+
+    /* ⭐ 썸네일 – 사진처럼 아래 가로 정렬 */
+    .menuStory__thumbs {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 6px 0 10px;
+        scrollbar-width: none;
+    }
+
+    .menuStory__thumbs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menuStory__thumbs li img {
+        width: 64px;
+        height: 64px;
+        border-radius: 6px;
+        flex-shrink: 0;
+        opacity: 0.9;
+    }
+
+    /* 사이드 네비 컬럼 제거 효과 */
+    .menuStory__inner::after {
+        display: none;
+    }
+}
+

@@ -1,0 +1,46 @@
+.brand {
+    padding: 140px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.brand__inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.brand__subtitle {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    color: #8b6f47;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.brand__title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.brand__desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+    .brand {
+        padding: 100px 20px;
+    }
+
+    .brand__title {
+        font-size: 28px;
+    }
+
+    .brand__desc {
+        font-size: 15px;
+    }
+}

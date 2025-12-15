@@ -1,0 +1,117 @@
+.footer {
+    background-color: #8b6f47;
+    color: #fff;
+    padding: 80px 20px 40px;
+    font-family: "Pretendard", sans-serif;
+}
+
+.footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+/* 공통 */
+.footer__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__list li {
+    font-size: 15px;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.footer__bold {
+    font-weight: 600;
+}
+
+/* 브랜드 */
+.footer__logo {
+    display: flex;                 /* ⭐ 이미지 + 텍스트 정렬 */
+    align-items: center;
+    gap: 10px;                     /* ⭐ 로고와 텍스트 간격 */
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1;
+}
+
+.footer__logo img {
+    width: 32px;                   /* ⭐ 로고 크기 */
+    height: auto;
+    display: block;
+}
+
+
+.footer__desc {
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+/* SNS */
+.footer__sns {
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+}
+
+.footer__sns a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.footer__sns a:hover {
+    background: #fff;
+    color: #8b6f47;
+}
+
+/* 하단 */
+.footer__bottom {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* ===============================
+   반응형
+================================ */
+@media (max-width: 768px) {
+    .footer__inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .footer__sns {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer__logo {
+        justify-content: center;
+    }
+}

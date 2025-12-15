@@ -1,0 +1,66 @@
+.about {
+    padding: 140px 20px;
+    background: #fff;
+}
+
+.about__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about__title {
+    font-size: 36px;
+    color: #8b5e3c;
+    margin-bottom: 20px;
+}
+
+.about__desc {
+    max-width: 620px;
+    margin: 0 auto 80px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #7a5a42;
+}
+
+.about__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.about__item {
+    flex: 1;
+}
+
+.about__icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #e8c6a0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #6b4a2f;
+}
+
+.about__item h3 {
+    font-size: 20px;
+    color: #8b5e3c;
+    margin-bottom: 10px;
+}
+
+.about__item p {
+    font-size: 15px;
+    color: #7a5a42;
+    line-height: 1.6;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .about__list {
+        flex-direction: column;
+    }
+}
