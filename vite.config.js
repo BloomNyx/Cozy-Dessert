@@ -1,7 +1,10 @@
-export default {
-    root: "src",
-    base: "/Cozy-Dessert/",
-    build: {
-        outDir: "../dist",
-    },
-};
+import { defineConfig } from "vite";
+
+export default defineConfig({
+  root: "src",
+  base: "/Cozy-Dessert/",
+  build: {
+    outDir: "../dist",
+    emptyOutDir: true,
+  },
+});
