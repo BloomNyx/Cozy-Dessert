@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import Flip from "gsap/flip";
+import Flip from "gsap/Flip";
 
 gsap.registerPlugin(Flip);
 
